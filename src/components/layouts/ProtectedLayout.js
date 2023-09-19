@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from './shared/Sidebar'
 import Footer from './shared/Footer'
 import Content from './shared/Content'
 import Navbar from './shared/Navbar'
 
 function ProtectedLayout() {
+  useEffect(() => {
+    document.body.classList.remove(...document.body.classList);
+    document.body.classList.add('hold-transition', 'sidebar-mini', 'layout-fixed');
+  }, []);
   return (
     <div className="wrapper">
         <div className="preloader flex-column justify-content-center align-items-center">
